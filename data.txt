@@ -1,0 +1,5 @@
+let ironhackObject = {
+  name: Ironhacker,
+  age: 25,
+  favoriteColor: yellow,
+};
