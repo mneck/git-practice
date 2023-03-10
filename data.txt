@@ -1,5 +1,32 @@
-let ironhackObject = {
-  name: Ironhacker,
-  age: 25,
-  favoriteColor: yellow,
+const player = {
+  x: 1,
+  y: 1,
 };
+
+function placeHorizontal(thePlayer, command) {
+  // if we move the player to the left and the player is not in the position y: 0
+  if (command === "l" && thePlayer.y > 0) {
+    thePlayer.y--;
+  }
+  // if we move the player to the right and the player is not in the position y: 2
+  else if (command === "r" && thePlayer.y < 2) {
+    thePlayer.y++;
+  } else {
+    console.log("You can't place the player outside of the board!");
+    return;
+  }
+
+  const newPosition = {
+    x: thePlayer.x,
+    y: thePlayer.y,
+  };
+
+  console.log(`--> command: ${command}`);
+  console.log(`Position of the player: x=${thePlayer.x}, y=${thePlayer.y}`);
+}
+
+let parentArray = [
+  [0, 0, 0, 1, 0, 2],
+  [1, 0, 1, 1, 1, 2],
+  [2, 0, 2, 1, 2, 2],
+];
